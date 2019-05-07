@@ -22,3 +22,5 @@ print(os.getcwd())
 fileList1 = glob.glob('*.txt')
 for i in fileList1:
     print("myfiles" , i)
+
+

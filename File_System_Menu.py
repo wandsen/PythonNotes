@@ -25,8 +25,17 @@ def rename(old_file_name, new_file_name, path):
 def move(src, dest):
     shutil.move(src, dest)
 
+def remove(src):
+    dir_name = os.path.join(os.curdir, 'subfolder' )
+    file_name = os.path.join(dir_name, src)
+    os.remove(file_name)
+
+def removeFolder(folder):
+    shutil.rmtree(folder, ignore_errors=True)
+
+
 #UI
-userAction = input("What would you like to do \n1) Copy Files\n2) Moving files\n3) Renaming files")
+userAction = input("What would you like to do \n1) Copy Files\n2) Moving files\n3) Renaming files\n4) Remove files\n5) Remove folder\n")
 print("useraction" , userAction)
 if (userAction == "1"):
     old_file_name = 'testfile2.txt'
@@ -48,7 +57,15 @@ elif (userAction == "3"):
     new_file_name = "testfile2Change.txt"
     path = "."
     rename(old_file_name, new_file_name, path)
+elif (userAction == "4"):
+    print('deleting files')
+    file_name = "testfile2Change.txt"
+    remove(file_name)
+    rename(old_file_name, new_file_name, path)
+elif (userAction == "5"):
+    print('deleting files in folder')
+    folder_name = "./subfolder/"
+    removeFolder(folder_name)
 else:
     print("no such option")
-
 
