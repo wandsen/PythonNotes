@@ -8,25 +8,26 @@ print(birthdayData)
 monthData = {}
 
 #Format the data the extract the count of each month
-for person in birthdayData:
-    dataMonth = birthdayData.get(person).split('/')[1]
-    if(monthData.get(dataMonth) == None):
-        print('Month does not exist, add month')
-        monthData[dataMonth] = 1
-    else:
-        monthData[dataMonth] +=1
+def printBarChart():
+    for person in birthdayData:
+        dataMonth = birthdayData.get(person).split('/')[1]
+        if(monthData.get(dataMonth) == None):
+            print('Month does not exist, add month')
+            monthData[dataMonth] = 1
+        else:
+            monthData[dataMonth] +=1
 
-print(monthData)
+    print(monthData)
 
-month = []
-count = []
-for key, value in monthData.items():
-    print(key)
-    month.append(key)
-    count.append(value)
+    month = []
+    count = []
+    for key, value in monthData.items():
+        print(key)
+        month.append(key)
+        count.append(value)
 
-plt.bar(month, count)
-plt.show()
+    plt.bar(month, count)
+    plt.show()
 
 
 

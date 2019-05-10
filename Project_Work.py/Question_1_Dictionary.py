@@ -11,7 +11,7 @@ birthdays = {
     "jam" : "15/September/1900",
     "kestral" : "15/October/1900"
 }
-def test():
+def askBirthday():
     print('Hi')
     user_input  = input("What name?")
     print("Your birthday is + " + birthdays.get(user_input))

@@ -28,19 +28,30 @@ def returnStat(column, stat):
         print("No such stat")
 
 #Counting the number of players in each country
-countryDf = fifaDf.groupby('Nationality')["Name"]
-print(countryDf.count())
+def numPlayerInCountry():
+    countryDf = fifaDf.groupby('Nationality')["Name"]
+    print(countryDf.count())
 
 #Group by age and find average potential
-ageDf = fifaDf.groupby("Age")
-print(ageDf["Potential"].mean())
+def avgPotentialByAge():
+    ageDf = fifaDf.groupby("Age")
+    print(ageDf["Potential"].mean())
 
-#Plotting age vs potential
-# sns.barplot(x = "Age", y = "Potential" , data = fifaDf)
-# plt.show()
+# Plotting age vs potential
+def barplotAgeVsPotential():
+    sns.barplot(x = "Age", y = "Potential" , data = fifaDf)
+    plt.show()
 
-# sns.countplot(x = "Potential", data = fifaDf)
-# plt.show()
+def countplotPotential():
+    sns.countplot(x = "Potential", data = fifaDf)
+    plt.show()
 
-sns.distplot(fifaDf["Potential"])
-plt.show()
+def distPlotPotential():
+    sns.distplot(fifaDf["Potential"])
+    plt.show()
+
+# def numPlayerInCountry()
+# def avgPotentialByAge()
+# def barplotAgeVsPotential()
+# def countplotPotential()
+# def distPlotPotential()
